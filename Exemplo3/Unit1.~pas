@@ -1,0 +1,71 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Numero1: TEdit;
+    Numero2: TEdit;
+    Sumar: TButton;
+    Suma: TLabel;
+    procedure Numero1Exit(Sender: TObject);
+    procedure Numero2Exit(Sender: TObject);
+    procedure SumarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Numero1Exit(Sender: TObject);
+begin
+       Try
+        StrToInt(Numero1.Text);
+       Except
+        on EConvertError do begin
+                                ShowMessage('Número no válido');
+                                Numero1.Text := '';
+                            end;
+       End;
+end;
+
+procedure TForm1.Numero2Exit(Sender: TObject);
+begin
+        Try
+         StrToInt(Numero2.Text);
+        Except
+         on EConvertError do begin
+                                ShowMessage('Número no válido');
+                                Numero2.Text := '';
+                            end;
+        End;
+end;
+
+procedure TForm1.SumarClick(Sender: TObject);
+begin
+        Try
+         Suma.Caption := '';
+         Suma.Caption := IntToStr(StrToInt(Numero1.Text)
+         + StrToInt(Numero2.Text));
+         Numero1.Text := '';
+         Numero2.Text := '';
+        Except
+         on EConvertError do begin
+                                ShowMessage('Número(s) no válido(s)');
+                                Suma.Caption := '';
+                             end;
+        End;
+end;
+
+end.

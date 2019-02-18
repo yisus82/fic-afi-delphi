@@ -1,0 +1,50 @@
+unit PanelBoton;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Controls, Graphics,
+  ExtCtrls, StdCtrls;
+
+type
+  TPanelBoton = class(TPanel)
+  private
+    { Private declarations }
+    FBoton: TButton;
+  protected
+    { Protected declarations }
+  public
+    { Public declarations }
+    constructor Create(AOwner:TComponent);override;
+    destructor Destroy;override;
+  published
+    { Published declarations }
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  RegisterComponents('Standard', [TPanelBoton]);
+end;
+
+constructor TPanelBoton.Create(AOwner:TComponent);
+begin
+        inherited Create(AOwner);
+        FBoton := TButton.Create(Self);
+        FBoton.Left := 56;
+        FBoton.Top := 8;
+        FBoton.Parent := Self;
+        Self.Caption := ' ';
+        Self.Color := clSilver;
+end;
+
+destructor TPanelBoton.Destroy;
+begin
+        FBoton.Destroy;
+        inherited Destroy;
+end;
+
+end.

@@ -1,0 +1,14 @@
+program Project1;
+
+uses
+  Forms,
+  Unit4 in '..\BDEjemplo3\Unit4.pas' {Form4};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.Title := '';
+  Application.CreateForm(TForm4, Form4);
+  Application.Run;
+end.

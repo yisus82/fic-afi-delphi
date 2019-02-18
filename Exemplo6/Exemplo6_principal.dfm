@@ -1,0 +1,45 @@
+object Form1: TForm1
+  Left = 199
+  Top = 114
+  Width = 696
+  Height = 480
+  Caption = 'Editor de textos'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 104
+    Top = 112
+    object Fichero1: TMenuItem
+      Caption = 'Archivo'
+      object Abrir1: TMenuItem
+        Caption = 'Abrir'
+        OnClick = Abrir1Click
+      end
+      object Novo1: TMenuItem
+        Caption = 'Nuevo'
+        OnClick = Novo1Click
+      end
+      object Grabar1: TMenuItem
+        Caption = 'Grabar'
+        OnClick = Grabar1Click
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 56
+    Top = 112
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 152
+    Top = 112
+  end
+end

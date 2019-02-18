@@ -1,0 +1,14 @@
+procedure TEditor.AbrirClick(Sender: TObject);
+begin
+        Memo1.Lines.LoadFromFile(EFichero.Text);
+end;
+
+procedure TEditor.GuardarClick(Sender: TObject);
+begin
+        Memo1.Lines.SaveToFile(EFichero.Text);
+end;
+
+procedure TEditor.SalirClick(Sender: TObject);
+begin
+        Close;
+end;

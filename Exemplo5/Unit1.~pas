@@ -1,0 +1,38 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TAplicaciones = class(TForm)
+    Calculadora: TButton;
+    Editor: TButton;
+    procedure CalculadoraClick(Sender: TObject);
+    procedure EditorClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Aplicaciones: TAplicaciones;
+
+implementation
+
+{$R *.dfm}
+
+procedure TAplicaciones.CalculadoraClick(Sender: TObject);
+begin
+        Calculadora.Visible := true;
+end;
+
+procedure TAplicaciones.EditorClick(Sender: TObject);
+begin
+        Editor.Show;
+end;
+
+end.

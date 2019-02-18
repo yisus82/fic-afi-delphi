@@ -1,0 +1,13 @@
+program Exemplo5;
+
+uses
+  Forms,
+  Unit1 in 'Unit1.pas' {Aplicaciones};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TAplicaciones, Aplicaciones);
+  Application.Run;
+end.
